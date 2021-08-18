@@ -244,6 +244,14 @@
                     </block>
                 </value>
             </block>
+            <block type="entity_summon">
+                <value name="TYPE">
+                    <block type="entity_type_search">
+                        <field name="KEY">海豚</field>
+                        <field name="TYPE">DOLPHIN</field>
+                    </block>
+                </value>
+            </block>
             <block type="entity_prop_mod"></block>
             <block type="entity_delete"></block>
             <block type="entity_tp"></block>
