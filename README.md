@@ -1,6 +1,6 @@
 # PVPINBlockly
 
-[![Build & Deploy](https://github.com/PVPINStudio/PVPINBlocklyPreview/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/PVPINStudio/PVPINBlocklyPreview/actions/workflows/deploy.yml)
+[![Build & Deploy](https://github.com/PVPINStudio/PVPINBlocklyPreview/actions/workflows/deploy.yml/badge.svg)](https://github.com/PVPINStudio/PVPINBlocklyPreview/actions/workflows/deploy.yml)
 
 當倉庫 [PVPINBlocklyEditor](https://github.com/PVPINStudio/PVPINBlocklyEditor/) 更新時自動部署 `github-pages`
 
