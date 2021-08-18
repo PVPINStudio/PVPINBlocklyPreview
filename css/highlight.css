@@ -1,0 +1,89 @@
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    background: #eef7f2;
+    color: #000
+}
+
+.hljs-addition, .hljs-attribute, .hljs-emphasis, .hljs-link {
+    color: #070
+}
+
+.hljs-emphasis {
+    font-style: italic
+}
+
+.hljs-deletion, .hljs-string, .hljs-strong {
+    color: #d14
+}
+
+.hljs-strong {
+    font-weight: 700
+}
+
+.hljs-comment, .hljs-quote {
+    color: #998;
+    font-style: italic
+}
+
+.hljs-section, .hljs-title {
+    color: #900
+}
+
+.hljs-class .hljs-title, .hljs-type {
+    color: #458
+}
+
+.hljs-template-variable, .hljs-variable {
+    color: #369
+}
+
+.hljs-bullet {
+    color: #970
+}
+
+.hljs-meta {
+    color: #34b
+}
+
+.hljs-code, .hljs-keyword, .hljs-literal, .hljs-number, .hljs-selector-tag {
+    color: #099
+}
+
+.hljs-regexp {
+    background-color: #fff0ff;
+    color: #808
+}
+
+.hljs-symbol {
+    color: #990073
+}
+
+.hljs-name, .hljs-selector-class, .hljs-selector-id, .hljs-tag {
+    color: #070
+}
+
+/* for block of numbers */
+
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    color: rgb(166, 166, 166);
+    border-right: 10px solid #eef7f2;
+    vertical-align: top;
+    padding-right: 5px;
+    font-size: 120%;
+}
+
+/* for block of code */
+
+.hljs-ln-code {
+    padding-left: 10px;
+    font-family: Consolas, Monaco, monospace;
+}

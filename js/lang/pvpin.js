@@ -1,0 +1,1 @@
+// PVPINCore 对此API的实现在 src/main/javascript/api.js
