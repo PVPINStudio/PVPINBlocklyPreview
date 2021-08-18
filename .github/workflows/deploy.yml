@@ -1,0 +1,42 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Clone
+        uses: GuillaumeFalourd/clone-github-repo-action@main
+        with:
+          owner: PVPINStudio
+          repository: PVPINBlocklyEditor
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Access and Build
+        run: |
+          cd PVPINBlocklyEditor
+          sudo npm install
+          sudo npm audit fix
+          sudo gulp build
+
+          tree src/
+          tree dist/
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: ./PVPINBlocklyEditor/dist/
