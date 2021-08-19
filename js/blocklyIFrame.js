@@ -23,6 +23,9 @@ options = {
     scrollbars: true,
     sounds: true,
     oneBasedIndex: true,
+    plugins: {
+        'connectionChecker': 'PVPINConnectionChecker'
+    }
 };
 // Toolbox options
 blocklyDiv = document.getElementById("blocklyDiv");
@@ -100,9 +103,9 @@ function workspaceToSvg_(workspace, callback, customCss) {
     svg.setAttribute(
         "class",
         "blocklySvg " +
-            (workspace.options.renderer || "geras") +
-            "-renderer " +
-            (workspace.getTheme ? workspace.getTheme().name + "-theme" : "")
+        (workspace.options.renderer || "geras") +
+        "-renderer " +
+        (workspace.getTheme ? workspace.getTheme().name + "-theme" : "")
     );
     svg.setAttribute("width", width);
     svg.setAttribute("height", height);
