@@ -1,7 +1,7 @@
 # PVPIN Blockly Preview
 
 ## Build Status
-[![Build & Deploy](https://img.shields.io/github/checks-status/PVPINStudio/PVPINBlocklyPreview/master?style=flat-square)](https://github.com/PVPINStudio/PVPINBlocklyPreview/actions/workflows/deploy.yml)
+[![Build & Deploy](https://img.shields.io/github/checks-status/PVPINStudio/PVPINBlocklyPreview/gh-pages?style=flat-square)](https://github.com/PVPINStudio/PVPINBlocklyPreview/actions/workflows/deploy.yml)
 
 ## Description
 
