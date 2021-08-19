@@ -253,6 +253,7 @@
                 </value>
             </block>
             <block type="entity_prop_mod"></block>
+            <block type="entity_pose"></block>
             <block type="entity_delete"></block>
             <block type="entity_tp"></block>
             <block type="entity_nearby">
@@ -281,6 +282,10 @@
                         </shadow>
                     </value>
                 </block>
+            </category>
+
+            <category name="生物实体" colour="#A8331A">
+                <block type="livingentity_prop_mod"></block>
             </category>
 
             <category name="玩家" colour="#B78D12">
