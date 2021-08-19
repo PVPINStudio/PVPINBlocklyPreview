@@ -97,6 +97,11 @@
             </category>
 
             <category name="元数据" colour="#f33b1f">
+                <category name="药水效果" coluor="#9400D3">
+                    <block type="potion_type">
+                        <field name="TYPE">DOLPHINS_GRACE</field>
+                    </block>
+                </category>
                 <block type="variables_set">
                     <field name="VAR">meta</field>
                     <value name="VALUE">
