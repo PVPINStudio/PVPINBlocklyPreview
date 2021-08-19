@@ -286,6 +286,8 @@
 
             <category name="生物实体" colour="#A8331A">
                 <block type="livingentity_prop_mod"></block>
+                <block type="livingentity_attack"></block>
+                <block type="livingentity_add_pt_eff"></block>
             </category>
 
             <category name="玩家" colour="#B78D12">

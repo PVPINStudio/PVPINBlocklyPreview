@@ -10,3 +10,15 @@ function impt(pkgPaths) {
             "var " + clazz + " = Java.type('" + pkg + "');";
     }
 }
+
+function gtv(block, fieldName) {
+    return Blockly.JavaScript.valueToCode(block, fieldName, ORD_ATOM);
+}
+
+function bbk(id, con) {
+    Blockly.Blocks[id] = con;
+}
+
+function bjs(id, func) {
+    Blockly.JavaScript[id] = func;
+}
