@@ -231,48 +231,51 @@
         </category>
 
         <category name="实体" colour="#29b7cb">
-            <block type="variables_set">
-                <field name="VAR">entity</field>
-                <value name="VALUE">
-                    <block type="entity_summon">
-                        <value name="TYPE">
-                            <block type="entity_type_search">
-                                <field name="KEY">海豚</field>
-                                <field name="TYPE">DOLPHIN</field>
-                            </block>
-                        </value>
-                    </block>
-                </value>
-            </block>
-            <block type="entity_summon">
-                <value name="TYPE">
-                    <block type="entity_type_search">
-                        <field name="KEY">海豚</field>
-                        <field name="TYPE">DOLPHIN</field>
-                    </block>
-                </value>
-            </block>
-            <block type="entity_prop_mod"></block>
-            <block type="entity_pose"></block>
-            <block type="entity_delete"></block>
-            <block type="entity_tp"></block>
-            <block type="entity_nearby">
-                <value name="X">
-                    <block type="math_number">
-                        <field name="NUM">5</field>
-                    </block>
-                </value>
-                <value name="Y">
-                    <block type="math_number">
-                        <field name="NUM">5</field>
-                    </block>
-                </value>
-                <value name="Z">
-                    <block type="math_number">
-                        <field name="NUM">5</field>
-                    </block>
-                </value>
-            </block>
+            <category name="实体" colour="#29b7cb">
+                <block type="variables_set">
+                    <field name="VAR">entity</field>
+                    <value name="VALUE">
+                        <block type="entity_summon">
+                            <value name="TYPE">
+                                <block type="entity_type_search">
+                                    <field name="KEY">海豚</field>
+                                    <field name="TYPE">DOLPHIN</field>
+                                </block>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+                <block type="entity_summon">
+                    <value name="TYPE">
+                        <block type="entity_type_search">
+                            <field name="KEY">海豚</field>
+                            <field name="TYPE">DOLPHIN</field>
+                        </block>
+                    </value>
+                </block>
+                <block type="entity_prop_mod"></block>
+                <block type="entity_pose"></block>
+                <block type="entity_delete"></block>
+                <block type="entity_tp"></block>
+                <block type="entity_nearby">
+                    <value name="X">
+                        <block type="math_number">
+                            <field name="NUM">5</field>
+                        </block>
+                    </value>
+                    <value name="Y">
+                        <block type="math_number">
+                            <field name="NUM">5</field>
+                        </block>
+                    </value>
+                    <value name="Z">
+                        <block type="math_number">
+                            <field name="NUM">5</field>
+                        </block>
+                    </value>
+                </block>
+            </category>
+
             <category name="实体类型" colour="#51c4d3">
                 <block type="entity_type_search"></block>
                 <block type="entity_type_valueof">
@@ -284,10 +287,60 @@
                 </block>
             </category>
 
-            <category name="生物实体" colour="#A8331A">
+            <category name="生物实体" colour="#43CD80">
                 <block type="livingentity_prop_mod"></block>
                 <block type="livingentity_attack"></block>
-                <block type="livingentity_add_pt_eff"></block>
+                <block type="livingentity_add_pt_eff">
+                    <value name="EFF">
+                        <block type="potion_constructor">
+                            <value name="TYPE">
+                                <block type="potion_type">
+                                    <field name="TYPE">DOLPHINS_GRACE</field>
+                                </block>
+                            </value>
+                            <value name="DURA">
+                                <block type="unclassified_ticks_to_sec">
+                                    <value name="SEC">
+                                        <shadow type="math_number">
+                                            <field name="NUM">1</field>
+                                        </shadow>
+                                    </value>
+                                </block>
+                            </value>
+                            <value name="AMPL">
+                                <shadow type="math_number">
+                                    <field name="NUM">2</field>
+                                </shadow>
+                            </value>
+                            <value name="AMBI">
+                                <shadow type="unclassified_boolean_checkbox">
+                                    <field name="INFO">TRUE</field>
+                                </shadow>
+                            </value>
+                            <value name="PART">
+                                <shadow type="unclassified_boolean_checkbox">
+                                    <field name="INFO">TRUE</field>
+                                </shadow>
+                            </value>
+                            <value name="ICON">
+                                <shadow type="unclassified_boolean_checkbox">
+                                    <field name="INFO">TRUE</field>
+                                </shadow>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+                <block type="livingentity_has_pt_eff">
+                    <value name="TYPE">
+                        <block type="potion_type">
+                            <field name="TYPE">DOLPHINS_GRACE</field>
+                        </block>
+                    </value>
+                </block>
+                <block type="livingentity_remove_pt_eff"></block>
+                <block type="livingentity_get_pt_eff"></block>
+                <block type="livingentity_get_all_pt_eff"></block>
+                <block type="livingentity_swing_hand"></block>
             </category>
 
             <category name="玩家" colour="#B78D12">
@@ -816,6 +869,13 @@
         </category>
 
         <category name="其他" colour="#7A7374">
+            <block type="unclassified_ticks_to_sec">
+                <value name="SEC">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
             <block type="incidental_ignorereturn"></block>
             <block type="incidental_convertion"></block>
             <block type="incidental_comment">
@@ -853,6 +913,7 @@
         <block type="logic_boolean">
             <field name="BOOL">TRUE</field>
         </block>
+        <block type="unclassified_boolean_checkbox"></block>
         <block type="logic_null"></block>
         <block type="logic_ternary"></block>
     </category>
