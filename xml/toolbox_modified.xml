@@ -100,9 +100,10 @@
                 <block type="variables_set">
                     <field name="VAR">meta</field>
                     <value name="VALUE">
-                        <shadow type="itemmeta_gettersetter">
+                        <block type="itemmeta_gettersetter">
+                            <mutation statement="false" input="false"></mutation>
                             <field name="TYPE">GETTER</field>
-                        </shadow>
+                        </block>
                     </value>
                 </block>
                 <block type="itemmeta_gettersetter">
