@@ -238,18 +238,10 @@
                         <block type="entity_summon">
                             <value name="TYPE">
                                 <block type="entity_type_search">
-                                    <field name="KEY">海豚</field>
                                     <field name="TYPE">DOLPHIN</field>
+                                    <field name="KEY">海豚</field>
                                 </block>
                             </value>
-                        </block>
-                    </value>
-                </block>
-                <block type="entity_summon">
-                    <value name="TYPE">
-                        <block type="entity_type_search">
-                            <field name="KEY">海豚</field>
-                            <field name="TYPE">DOLPHIN</field>
                         </block>
                     </value>
                 </block>
@@ -290,7 +282,8 @@
             <category name="生物实体" colour="#43CD80">
                 <block type="livingentity_prop_mod"></block>
                 <block type="livingentity_attack"></block>
-                <block type="livingentity_add_pt_eff">
+                <block type="livingentity_potioneffectgettersetter">
+                    <field name="OPTION">ADD</field>
                     <value name="EFF">
                         <block type="potion_constructor">
                             <value name="TYPE">
@@ -313,33 +306,23 @@
                                 </shadow>
                             </value>
                             <value name="AMBI">
-                                <shadow type="unclassified_boolean_checkbox">
-                                    <field name="INFO">TRUE</field>
+                                <shadow type="logic_boolean">
+                                    <field name="BOOL">TRUE</field>
                                 </shadow>
                             </value>
                             <value name="PART">
-                                <shadow type="unclassified_boolean_checkbox">
-                                    <field name="INFO">TRUE</field>
+                                <shadow type="logic_boolean">
+                                    <field name="BOOL">TRUE</field>
                                 </shadow>
                             </value>
                             <value name="ICON">
-                                <shadow type="unclassified_boolean_checkbox">
-                                    <field name="INFO">TRUE</field>
+                                <shadow type="logic_boolean">
+                                    <field name="BOOL">TRUE</field>
                                 </shadow>
                             </value>
                         </block>
                     </value>
                 </block>
-                <block type="livingentity_has_pt_eff">
-                    <value name="TYPE">
-                        <block type="potion_type">
-                            <field name="TYPE">DOLPHINS_GRACE</field>
-                        </block>
-                    </value>
-                </block>
-                <block type="livingentity_remove_pt_eff"></block>
-                <block type="livingentity_get_pt_eff"></block>
-                <block type="livingentity_get_all_pt_eff"></block>
                 <block type="livingentity_swing_hand"></block>
             </category>
 
@@ -486,16 +469,12 @@
                     <value name="VALUE">
                         <block type="projectile_launch_without_vec">
                             <value name="ETY">
-                                <block type="incidental_convertion">
-                                    <value name="OBJECT">
-                                        <block type="player_me"></block>
-                                    </value>
-                                </block>
+                                <shadow type="player_me"></shadow>
                             </value>
                             <value name="TYPE">
-                                <block type="projectile_types">
+                                <shadow type="projectile_types">
                                     <field name="TYPE">Arrow</field>
-                                </block>
+                                </shadow>
                             </value>
                         </block>
                     </value>
@@ -510,25 +489,20 @@
                         </block>
                     </value>
                     <value name="INPUT">
-                        <block type="incidental_convertion">
-                            <value name="OBJECT">
-                                <block type="player_me"></block>
-                            </value>
-                        </block>
+                        <shadow type="player_me"></shadow>
                     </value>
                 </block>
                 <block type="projectile_launch">
                     <value name="ETY">
-                        <block type="incidental_convertion">
-                            <value name="OBJECT">
-                                <block type="player_me"></block>
-                            </value>
-                        </block>
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="VEC">
+                        <shadow type="vector_empty"></shadow>
                     </value>
                     <value name="TYPE">
-                        <block type="projectile_types">
+                        <shadow type="projectile_types">
                             <field name="TYPE">Arrow</field>
-                        </block>
+                        </shadow>
                     </value>
                 </block>
                 <block type="projectile_types"></block>
@@ -913,7 +887,6 @@
         <block type="logic_boolean">
             <field name="BOOL">TRUE</field>
         </block>
-        <block type="unclassified_boolean_checkbox"></block>
         <block type="logic_null"></block>
         <block type="logic_ternary"></block>
     </category>
