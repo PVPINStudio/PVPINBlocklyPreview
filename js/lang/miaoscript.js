@@ -44,22 +44,6 @@ function registerEventListener(eventType, priority, ignoreCancelled, callback) {
 }
 
 function registerCommand(name, cmdCallback, tabCallback) {
-    function cmdCallBack0(sender, cmd, args) {
-        var Player = Java.type('org.bukkit.entity.Player');
-        if (sender instanceof Player) {
-            cmdCallback(sender, cmd, args);
-        } else {
-            cmdCallback(Java.type('org.bukkit.Bukkit').getConsoleSender(), cmd, args);
-        }
-    }
-    function tabCallback0(sender, cmd, args) {
-        var Player = Java.type('org.bukkit.entity.Player');
-        if (sender instanceof Player) {
-            tabCallback(sender, cmd, args);
-        } else {
-            tabCallback(Java.type('org.bukkit.Bukkit').getConsoleSender(), cmd, args);
-        }
-    }
     command.on(self, name, { cmd: cmdCallBack0, tab: tabCallback0 });
 }
 

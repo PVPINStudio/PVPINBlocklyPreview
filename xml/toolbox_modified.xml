@@ -872,6 +872,92 @@
                 <field name="JS"></field>
             </block>
         </category>
+
+        <sep></sep>
+
+        <category name="指令" colour="#525288">
+            <block type="cmd_on">
+                <value name="NAME">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+                <statement name="CMDCALLBACK">
+                    <block type="incidental_param">
+                        <field name="COMMENT">指令发送者</field>
+                        <value name="PARAM">
+                            <block type="cmd_sender"></block>
+                        </value>
+                        <next>
+                            <block type="incidental_param">
+                                <field name="COMMENT">指令前缀</field>
+                                <value name="PARAM">
+                                    <block type="cmd_name"></block>
+                                </value>
+                                <next>
+                                    <block type="incidental_param">
+                                        <field name="COMMENT">指令参数列表</field>
+                                        <value name="PARAM">
+                                            <block type="cmd_args"></block>
+                                        </value>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <statement name="TABCALLBACK">
+                    <block type="incidental_param">
+                        <field name="COMMENT">指令发送者</field>
+                        <value name="PARAM">
+                            <block type="cmd_sender"></block>
+                        </value>
+                        <next>
+                            <block type="incidental_param">
+                                <field name="COMMENT">指令前缀</field>
+                                <value name="PARAM">
+                                    <block type="cmd_name"></block>
+                                </value>
+                                <next>
+                                    <block type="incidental_param">
+                                        <field name="COMMENT">指令参数列表</field>
+                                        <value name="PARAM">
+                                            <block type="cmd_args"></block>
+                                        </value>
+                                        <next>
+                                            <block type="cmd_return">
+                                                <value name="RET">
+                                                    <shadow type="lists_create_with">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <shadow type="text">
+                                                                <field name="TEXT">will</field>
+                                                            </shadow>
+                                                        </value>
+                                                    </shadow>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+            <block type="cmd_off">
+                <value name="NAME">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="cmd_sender"></block>
+            <block type="cmd_name"></block>
+            <block type="cmd_args"></block>
+            <block type="cmd_return"></block>
+        </category>
+        <category name="事件监听"></category>
     </category>
 
     <sep></sep>
