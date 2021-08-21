@@ -231,6 +231,108 @@
             </category>
         </category>
 
+        <category name="物品栏" colour="#B85647">
+            <block type="inventory_type"></block>
+            <block type="inventory_build_with_type">
+                <value name="HOLDER">
+                    <block type="logic_null"></block>
+                </value>
+                <value name="TYPE">
+                    <block type="inventory_type">
+                        <field name="TYPE">CHEST</field>
+                    </block>
+                </value>
+                <value name="TITLE">
+                    <block type="unclassified_colour">
+                        <value name="STR">
+                            <block type="text">
+                                <field name="TEXT">&amp;4无主箱子</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+            <block type="inventory_build_with_size">
+                <value name="HOLDER">
+                    <block type="logic_null"></block>
+                </value>
+                <value name="SIZE">
+                    <block type="inventory_size">
+                        <field name="TYPE">18</field>
+                    </block>
+                </value>
+                <value name="TITLE">
+                    <block type="unclassified_colour">
+                        <value name="STR">
+                            <block type="text">
+                                <field name="TEXT">&amp;4无主箱子</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+            <block type="inventory_add_item">
+                <value name="ITEM">
+                    <block type="itemstack_cons">
+                        <value name="MAT">
+                            <block type="material_search_latest">
+                                <field name="MAT">STONE</field>
+                                <field name="KEY">石</field>
+                            </block>
+                        </value>
+                        <value name="COUNT">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                    </block>
+                </value>
+            </block>
+            <block type="inventory_clear"></block>
+            <block type="inventory_contains"></block>
+            <block type="inventory_first">
+                <value name="ITEM">
+                    <block type="itemstack_cons">
+                        <value name="MAT">
+                            <block type="material_search_latest">
+                                <field name="MAT">STONE</field>
+                                <field name="KEY">石</field>
+                            </block>
+                        </value>
+                        <value name="COUNT">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                    </block>
+                </value>
+            </block>
+            <block type="inventory_first_empty"></block>
+            <block type="inventory_set_item">
+                <value name="SLOT">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="ITEM">
+                    <block type="itemstack_cons">
+                        <value name="MAT">
+                            <block type="material_search_latest">
+                                <field name="MAT">STONE</field>
+                                <field name="KEY">石</field>
+                            </block>
+                        </value>
+                        <value name="COUNT">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                    </block>
+                </value>
+            </block>
+            <block type="inventory_size"></block>
+        </category>
+
         <category name="实体" colour="#29b7cb">
             <category name="实体" colour="#29b7cb">
                 <block type="variables_set">
@@ -247,7 +349,28 @@
                     </value>
                 </block>
                 <block type="entity_prop_mod"></block>
-                <block type="entity_pose"></block>
+                <block type="controls_if">
+                    <value name="IF0">
+                        <block type="logic_compare">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                                <block type="entity_prop_mod">
+                                    <mutation statement="false" input="false"></mutation>
+                                    <field name="TYPE">GETTER</field>
+                                    <field name="OPTION">POSE</field>
+                                    <value name="ENTITY">
+                                        <block type="player_me"></block>
+                                    </value>
+                                </block>
+                            </value>
+                            <value name="B">
+                                <block type="entity_pose">
+                                    <field name="POSE">STANDING</field>
+                                </block>
+                            </value>
+                        </block>
+                    </value>
+                </block>
                 <block type="entity_delete"></block>
                 <block type="entity_tp"></block>
                 <block type="entity_nearby">
@@ -851,6 +974,7 @@
                     </shadow>
                 </value>
             </block>
+            <block type="unclassified_colour"></block>
             <block type="incidental_ignorereturn"></block>
             <block type="incidental_convertion"></block>
             <block type="incidental_comment">
@@ -970,7 +1094,7 @@
                 </value>
             </block>
             <block type="variables_set">
-                <field name="VAR" id="JHTrG^g$nFyEE|M^wNmr">task</field>
+                <field name="VAR">task</field>
                 <value name="VALUE">
                     <block type="runnable_timer">
                         <value name="TICK">
@@ -984,7 +1108,7 @@
             <block type="runnable_cancel">
                 <value name="TASK">
                     <block type="variables_get">
-                        <field name="VAR" id="JHTrG^g$nFyEE|M^wNmr">task</field>
+                        <field name="VAR">task</field>
                     </block>
                 </value>
             </block>
