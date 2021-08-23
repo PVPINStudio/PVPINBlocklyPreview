@@ -1,0 +1,1481 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+    <category name="Minecraft" colour="#5D3131">
+        <category name="服务器" colour="#2376B7">
+            <block type="server_broadcastmessage">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="server_log">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="server_dispatchcommand">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="server_shutdown"></block>
+            <block type="server_gettxt">
+                <field name="OPERATION">IP</field>
+            </block>
+            <block type="server_ban">
+                <field name="OPERATION">BAN</field>
+                <field name="TYPE">NAME</field>
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+
+        <category name="物品" colour="#F33B1F">
+            <category name="材质" colour="#F28E16">
+                <block type="material_search_latest">
+                    <field name="MAT">IRON_SWORD</field>
+                    <field name="KEY">剑</field>
+                </block>
+                <block type="material_match_latest">
+                    <field name="OPERATION">MATCH</field>
+                    <field name="CONVERT">FALSE</field>
+                    <value name="TXT">
+                        <shadow type="text">
+                            <field name="TEXT"></field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="material_search_1_12">
+                    <field name="MAT">WOOD_SWORD</field>
+                    <field name="KEY">SWORD</field>
+                </block>
+                <block type="material_match_1_12">
+                    <field name="OPERATION">MATCH</field>
+                    <value name="TXT">
+                        <shadow type="text">
+                            <field name="TEXT"></field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+
+            <category name="物品堆" colour="#F28E16">
+                <block type="itemstack_cons">
+                    <value name="COUNT">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="itemstack_gettersetter">
+                    <field name="TYPE">SETTER</field>
+                    <field name="OPERATION">COUNT</field>
+                    <value name="VALUE">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="itemstack_drop">
+                    <field name="OPERATION">NATURAL</field>
+                </block>
+                <block type="itemstack_compare">
+                    <field name="MAT">TRUE</field>
+                    <field name="COUNT">TRUE</field>
+                    <field name="DAMAGE">TRUE</field>
+                    <field name="NAME">TRUE</field>
+                    <field name="LORE">TRUE</field>
+                    <field name="ENCH">TRUE</field>
+                </block>
+            </category>
+
+            <category name="元数据" colour="#f33b1f">
+                <block type="variables_set">
+                    <field name="VAR">meta</field>
+                    <value name="VALUE">
+                        <block type="itemmeta_gettersetter">
+                            <mutation statement="false" input="false"></mutation>
+                            <field name="TYPE">GETTER</field>
+                        </block>
+                    </value>
+                </block>
+                <block type="itemmeta_gettersetter">
+                    <field name="TYPE">SETTER</field>
+                    <value name="META">
+                        <block type="variables_get">
+                            <field name="VAR">meta</field>
+                        </block>
+                    </value>
+                </block>
+                <block type="itemmeta_prop">
+                    <field name="TYPE">SETTER</field>
+                    <field name="OPERATION">NAME</field>
+                    <value name="META">
+                        <block type="variables_get">
+                            <field name="VAR">meta</field>
+                        </block>
+                    </value>
+                    <value name="VALUE">
+                        <shadow type="text">
+                            <field name="TEXT"></field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="itemmeta_ench">
+                    <field name="TYPE">ADD</field>
+                    <value name="META">
+                        <block type="variables_get">
+                            <field name="VAR">meta</field>
+                        </block>
+                    </value>
+                    <value name="ENCH">
+                        <shadow type="itemmeta_enchenum">
+                            <field name="VALUE">SWEEPING_EDGE</field>
+                        </shadow>
+                    </value>
+                    <value name="NAME">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="itemmeta_enchgetter">
+                    <value name="META">
+                        <block type="variables_get">
+                            <field name="VAR">meta</field>
+                        </block>
+                    </value>
+                    <value name="ENCH">
+                        <shadow type="itemmeta_enchenum">
+                            <field name="VALUE">SWEEPING_EDGE</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="itemmeta_enchenum">
+                    <field name="VALUE">SWEEPING_EDGE</field>
+                </block>
+                <block type="itemmeta_attr">
+                    <value name="META">
+                        <block type="variables_get">
+                            <field name="VAR">meta</field>
+                        </block>
+                    </value>
+                    <value name="ATTR">
+                        <shadow type="itemmeta_attrenum">
+                            <field name="VALUE">GENERIC_ARMOR</field>
+                        </shadow>
+                    </value>
+                    <value name="MODIFIER">
+                        <shadow type="itemmeta_attrcons">
+                            <value name="NAME">
+                                <shadow type="text">
+                                    <field name="TEXT"></field>
+                                </shadow>
+                            </value>
+                            <value name="AMOUNT">
+                                <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                </shadow>
+                            </value>
+                            <value name="OPERATION">
+                                <shadow type="itemmeta_operationenum">
+                                    <field name="VALUE">ADD_NUMBER</field>
+                                </shadow>
+                            </value>
+                            <value name="SLOT">
+                                <shadow type="itemmeta_slotenum">
+                                    <field name="VALUE">HAND</field>
+                                </shadow>
+                            </value>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="itemmeta_attrcons">
+                    <value name="NAME">
+                        <shadow type="text">
+                            <field name="TEXT"></field>
+                        </shadow>
+                    </value>
+                    <value name="AMOUNT">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="OPERATION">
+                        <shadow type="itemmeta_operationenum">
+                            <field name="VALUE">ADD_NUMBER</field>
+                        </shadow>
+                    </value>
+                    <value name="SLOT">
+                        <shadow type="itemmeta_slotenum">
+                            <field name="VALUE">HAND</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="itemmeta_operationenum">
+                    <field name="VALUE">ADD_NUMBER</field>
+                </block>
+                <block type="itemmeta_slotenum">
+                    <field name="VALUE">HAND</field>
+                </block>
+                <block type="itemmeta_attrenum">
+                    <field name="VALUE">GENERIC_ARMOR</field>
+                </block>
+            </category>
+        </category>
+
+        <category name="物品栏" colour="#B85647">
+            <block type="variables_set">
+                <field name="VAR">inventory</field>
+                <value name="VALUE">
+                    <block type="inventory_build_with_type">
+                        <value name="HOLDER">
+                            <shadow type="logic_null"></shadow>
+                        </value>
+                        <value name="TYPE">
+                            <block type="inventory_type">
+                                <field name="TYPE">CHEST</field>
+                            </block>
+                        </value>
+                        <value name="TITLE">
+                            <shadow type="text">
+                                <field name="TEXT"></field>
+                            </shadow>
+                        </value>
+                    </block>
+                </value>
+            </block>
+            <block type="variables_set">
+                <field name="VAR">inventory</field>
+                <value name="VALUE">
+                    <block type="inventory_build_with_size">
+                        <value name="HOLDER">
+                            <shadow type="logic_null"></shadow>
+                        </value>
+                        <value name="SIZE">
+                            <block type="inventory_size">
+                                <field name="TYPE">27</field>
+                            </block>
+                        </value>
+                        <value name="TITLE">
+                            <shadow type="text">
+                                <field name="TEXT"></field>
+                            </shadow>
+                        </value>
+                    </block>
+                </value>
+            </block>
+            <block type="inventory_type"></block>
+            <block type="inventory_size"></block>
+            <block type="inventory_prop_mod"></block>
+            <block type="inventory_player">
+                <field name="OPERATION">GET</field>
+            </block>
+            <block type="inventory_addersetter">
+                <value name="SLOT">
+                    <shadow type="logic_null"></shadow>
+                </value>
+                <value name="ITEM">
+                    <shadow type="itemstack_cons">
+                        <value name="MAT">
+                            <shadow type="material_search_latest">
+                                <field name="MAT">HEART_OF_THE_SEA</field>
+                                <field name="KEY">海洋之心</field>
+                            </shadow>
+                        </value>
+                        <value name="COUNT">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                    </shadow>
+                </value>
+            </block>
+            <block type="inventory_clear"></block>
+            <block type="inventory_contains">
+                <field name="OPERATION">ITEM</field>
+            </block>
+            <block type="inventory_first">
+                <field name="OPERATION">ITEM</field>
+                <value name="ITEM">
+                    <shadow type="itemstack_cons">
+                        <value name="MAT">
+                            <shadow type="material_search_latest">
+                                <field name="MAT">HEART_OF_THE_SEA</field>
+                                <field name="KEY">海洋之心</field>
+                            </shadow>
+                        </value>
+                        <value name="COUNT">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+
+        <category name="实体" colour="#29b7cb">
+            <category name="实体" colour="#29b7cb">
+                <block type="variables_set">
+                    <field name="VAR">entity</field>
+                    <value name="VALUE">
+                        <block type="entity_summon">
+                            <value name="TYPE">
+                                <block type="entity_type_search">
+                                    <field name="TYPE">DOLPHIN</field>
+                                    <field name="KEY">海豚</field>
+                                </block>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+                <block type="entity_prop_mod"></block>
+                <block type="controls_if">
+                    <value name="IF0">
+                        <block type="logic_compare">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                                <block type="entity_prop_mod">
+                                    <mutation statement="false" input="false"></mutation>
+                                    <field name="TYPE">GETTER</field>
+                                    <field name="OPTION">POSE</field>
+                                    <value name="ENTITY">
+                                        <block type="player_me"></block>
+                                    </value>
+                                </block>
+                            </value>
+                            <value name="B">
+                                <block type="entity_pose">
+                                    <field name="POSE">STANDING</field>
+                                </block>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+                <block type="entity_delete"></block>
+                <block type="entity_tp"></block>
+                <block type="entity_nearby">
+                    <value name="X">
+                        <block type="math_number">
+                            <field name="NUM">5</field>
+                        </block>
+                    </value>
+                    <value name="Y">
+                        <block type="math_number">
+                            <field name="NUM">5</field>
+                        </block>
+                    </value>
+                    <value name="Z">
+                        <block type="math_number">
+                            <field name="NUM">5</field>
+                        </block>
+                    </value>
+                </block>
+            </category>
+
+            <category name="实体类型" colour="#51c4d3">
+                <block type="entity_type_search"></block>
+                <block type="entity_type_valueof">
+                    <value name="TYPE">
+                        <shadow type="text">
+                            <field name="TEXT">DOLPHIN</field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+
+            <category name="生物实体" colour="#43CD80">
+                <block type="livingentity_prop_mod"></block>
+                <block type="livingentity_attack"></block>
+                <block type="livingentity_potioneffectgettersetter">
+                    <field name="OPTION">ADD</field>
+                    <value name="EFF">
+                        <block type="potion_constructor">
+                            <value name="TYPE">
+                                <block type="potion_type">
+                                    <field name="TYPE">DOLPHINS_GRACE</field>
+                                </block>
+                            </value>
+                            <value name="DURA">
+                                <block type="unclassified_ticks_to_sec">
+                                    <value name="SEC">
+                                        <shadow type="math_number">
+                                            <field name="NUM">1</field>
+                                        </shadow>
+                                    </value>
+                                </block>
+                            </value>
+                            <value name="AMPL">
+                                <shadow type="math_number">
+                                    <field name="NUM">2</field>
+                                </shadow>
+                            </value>
+                            <value name="AMBI">
+                                <shadow type="logic_boolean">
+                                    <field name="BOOL">TRUE</field>
+                                </shadow>
+                            </value>
+                            <value name="PART">
+                                <shadow type="logic_boolean">
+                                    <field name="BOOL">TRUE</field>
+                                </shadow>
+                            </value>
+                            <value name="ICON">
+                                <shadow type="logic_boolean">
+                                    <field name="BOOL">TRUE</field>
+                                </shadow>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+                <block type="livingentity_swing_hand"></block>
+            </category>
+
+            <category name="玩家" colour="#B78D12">
+                <block type="player_setme"></block>
+                <block type="player_me"></block>
+                <block type="player_get">
+                    <field name="OPERATION">NAME</field>
+                    <value name="TEXT">
+                        <shadow type="text">
+                            <field name="TEXT"></field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="player_gamemode_gettersetter">
+                    <field name="TYPE">SETTER</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="NAME">
+                        <block type="player_gamemode">
+                            <field name="ENUM">SURVIVAL</field>
+                        </block>
+                    </value>
+                </block>
+                <block type="player_list">
+                    <field name="PLAYER">player</field>
+                </block>
+                <block type="player_chat">
+                    <field name="OPERATION">CHAT</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="TEXT">
+                        <shadow type="text">
+                            <field name="TEXT"></field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="player_movement">
+                    <field name="TYPE">SETTER</field>
+                    <field name="OPERATION">FLYING</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="INPUT">
+                        <shadow type="logic_boolean">
+                            <field name="BOOL">TRUE</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="player_textgetter">
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <field name="OPERATION">NAME</field>
+                </block>
+                <block type="player_exp_gettersetter">
+                    <field name="TYPE">SETTER</field>
+                    <field name="OPERATION">TOTAL</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="NUM">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="player_exp_give">
+                    <field name="OPERATION">EXP</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="NUM">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="player_kick">
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="TEXT">
+                        <shadow type="text">
+                            <field name="TEXT"></field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="player_update">
+                    <field name="OPERATION">INV</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
+                <block type="player_loc">
+                    <field name="TYPE">SETTER</field>
+                    <field name="OPERATION">COMPASS</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
+                <block type="player_attr">
+                    <field name="TYPE">SETTER</field>
+                    <field name="OPERATION">FLYSPEED</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="INPUT">
+                        <block type="math_number">
+                            <field name="NUM">0</field>
+                        </block>
+                    </value>
+                </block>
+                <block type="player_sendmsg">
+                    <field name="OPERATION">MESSAGE</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="TEXT">
+                        <shadow type="text">
+                            <field name="TEXT"></field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="player_displayname">
+                    <field name="TYPE">SETTER</field>
+                    <field name="OPERATION">DISPLAYNAME</field>
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="TEXT">
+                        <shadow type="text">
+                            <field name="TEXT"></field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+
+            <category name="抛射物" colour="#8A2BE2">
+                <block type="variables_set">
+                    <field name="VAR">projectileEntity</field>
+                    <value name="VALUE">
+                        <block type="projectile_launch_without_vec">
+                            <value name="ETY">
+                                <shadow type="player_me"></shadow>
+                            </value>
+                            <value name="TYPE">
+                                <shadow type="projectile_types">
+                                    <field name="TYPE">Arrow</field>
+                                </shadow>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+                <block type="projectile_prop">
+                    <mutation statement="true" input="true"></mutation>
+                    <field name="TYPE">SETTER</field>
+                    <field name="OPERATION">SHOOTER</field>
+                    <value name="PROJECTILE">
+                        <block type="variables_get">
+                            <field name="VAR">projectileEntity</field>
+                        </block>
+                    </value>
+                    <value name="INPUT">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
+                <block type="projectile_launch">
+                    <value name="ETY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="VEC">
+                        <shadow type="vector_empty"></shadow>
+                    </value>
+                    <value name="TYPE">
+                        <shadow type="projectile_types">
+                            <field name="TYPE">Arrow</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="projectile_types"></block>
+            </category>
+        </category>
+
+        <category name="向量" colour="#5BAE23">
+            <block type="vector_empty"></block>
+            <block type="vector_constructor">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" vector_input="false"></mutation>
+                <field name="CONS">NEW</field>
+                <value name="X">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Z">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="vector_calculate">
+                <field name="OPERATION">ADD</field>
+                <value name="A">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+                <value name="B">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+            </block>
+            <block type="vector_attr">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" vector_input="false"></mutation>
+                <field name="OPERATION">X</field>
+                <value name="VEC">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+            </block>
+            <block type="vector_setter">
+                <field name="OPERATION">X</field>
+                <value name="VEC">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="vector_convert">
+                <field name="OPERATION">VECTOLOC</field>
+                <value name="VEC">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+            </block>
+            <block type="vector_isinaabb">
+                <value name="VEC">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+                <value name="VEC1">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+                <value name="VEC2">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+            </block>
+            <block type="vec_rotate">
+                <value name="VEC">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+                <value name="VEC2">
+                    <shadow type="vector_empty"></shadow>
+                </value>
+                <value name="NUM">
+                    <shadow type="math_constant">
+                        <field name="CONSTANT">PI</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="loc_attr">
+                <field name="OPERATION">X</field>
+            </block>
+            <block type="loc_setter">
+                <field name="OPERATION">X</field>
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="loc_cons">
+                <value name="X">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Z">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="YAW">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Pitch">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="loc_cons2">
+                <value name="X">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Z">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+
+        <category name="效果" colour="#BA2F7B">
+            <block type="effect_worldplayparticle">
+                <value name="PARTICLE">
+                    <block type="effect_particleenum">
+                        <field name="PARTICLE">DOLPHIN</field>
+                        <field name="KEY">DOLPHIN</field>
+                    </block>
+                </value>
+                <value name="COUNT">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="X">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Z">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="EXTRA">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="effect_playerplayparticle">
+                <value name="PLAYER">
+                    <shadow type="player_me"></shadow>
+                </value>
+                <value name="PARTICLE">
+                    <block type="effect_particleenum">
+                        <field name="PARTICLE">DOLPHIN</field>
+                        <field name="KEY">DOLPHIN</field>
+                    </block>
+                </value>
+                <value name="COUNT">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="X">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Z">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="EXTRA">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="effect_playerplaysound">
+                <value name="PLAYER">
+                    <shadow type="player_me"></shadow>
+                </value>
+                <value name="SOUND">
+                    <block type="effect_soundenum">
+                        <field name="SOUND">ENTITY_DOLPHIN_AMBIENT</field>
+                        <field name="KEY">海豚</field>
+                    </block>
+                </value>
+                <value name="VOLUME">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="PITCH">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="effect_worldplaysound">
+                <value name="SOUND">
+                    <block type="effect_soundenum">
+                        <field name="SOUND">ENTITY_DOLPHIN_AMBIENT</field>
+                        <field name="KEY">海豚</field>
+                    </block>
+                </value>
+                <value name="VOLUME">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="PITCH">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+
+        <category name="世界" colour="#458B74">
+            <block type="world_list"></block>
+            <block type="world_get">
+                <field name="OPERATION">NAME</field>
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="world_propgettersetter">
+                <field name="TYPE">SETTER</field>
+                <field name="OPTION">DIFFICULTY</field>
+                <value name="INPUT">
+                    <block type="world_difficulty">
+                        <field name="VALUE">HARD</field>
+                    </block>
+                </value>
+            </block>
+            <block type="world_unload"></block>
+            <block type="world_environment">
+                <field name="VALUE">CUSTOM</field>
+            </block>
+            <block type="world_difficulty">
+                <field name="VALUE">EASY</field>
+            </block>
+            <block type="world_getblockchunk">
+                <field name="OPERATION">BLOCK</field>
+            </block>
+            <block type="world_chunkforceloaded">
+                <value name="LOADED">
+                    <shadow type="logic_boolean">
+                        <field name="BOOL">TRUE</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="world_chunkload">
+                <field name="OPERATION">UNLOAD</field>
+            </block>
+            <block type="world_generatetree">
+                <value name="TYPE">
+                    <shadow type="world_treetype">
+                        <field name="TYPE">ACACIA</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="world_treetype">
+                <field name="TYPE">ACACIA</field>
+            </block>
+            <block type="world_generateexplosion">
+                <field name="FIRE">TRUE</field>
+                <field name="BLOCKS">TRUE</field>
+                <value name="POWER">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="world_getblock_location">
+                <value name="WORLD">
+                    <shadow type="world_get">
+                        <field name="OPERATION">NAME</field>
+                        <value name="VALUE">
+                            <shadow type="text">
+                                <field name="TEXT">world</field>
+                            </shadow>
+                        </value>
+                    </shadow>
+                </value>
+                <value name="X">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Z">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+
+        <category name="其他" colour="#7A7374">
+            <block type="unclassified_ticks_to_sec">
+                <value name="SEC">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="unclassified_colour">
+                <value name="STR">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="unclassified_boolean_checkbox"></block>
+            <block type="incidental_ignorereturn"></block>
+            <block type="incidental_convertion"></block>
+            <block type="incidental_comment">
+                <field name="COMMENT">代码注释</field>
+            </block>
+            <block type="incidental_param">
+                <field name="COMMENT">注释</field>
+            </block>
+            <block type="incidental_module">
+                <field name="COMMENT">模块注释</field>
+            </block>
+            <block type="incidental_jsvalue1">
+                <field name="JS"></field>
+            </block>
+            <block type="incidental_jsvalue2">
+                <field name="JS"></field>
+            </block>
+            <block type="incidental_jsvalue3">
+                <field name="JS"></field>
+            </block>
+        </category>
+
+        <sep></sep>
+
+        <category name="指令" colour="#525288">
+            <block type="cmd_on">
+                <value name="NAME">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+                <statement name="CMDCALLBACK">
+                    <block type="incidental_param">
+                        <field name="COMMENT">指令发送者</field>
+                        <value name="PARAM">
+                            <block type="cmd_sender"></block>
+                        </value>
+                        <next>
+                            <block type="incidental_param">
+                                <field name="COMMENT">指令前缀</field>
+                                <value name="PARAM">
+                                    <block type="cmd_name"></block>
+                                </value>
+                                <next>
+                                    <block type="incidental_param">
+                                        <field name="COMMENT">指令参数列表</field>
+                                        <value name="PARAM">
+                                            <block type="cmd_args"></block>
+                                        </value>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <statement name="TABCALLBACK">
+                    <block type="incidental_param">
+                        <field name="COMMENT">指令发送者</field>
+                        <value name="PARAM">
+                            <block type="cmd_sender"></block>
+                        </value>
+                        <next>
+                            <block type="incidental_param">
+                                <field name="COMMENT">指令前缀</field>
+                                <value name="PARAM">
+                                    <block type="cmd_name"></block>
+                                </value>
+                                <next>
+                                    <block type="incidental_param">
+                                        <field name="COMMENT">指令参数列表</field>
+                                        <value name="PARAM">
+                                            <block type="cmd_args"></block>
+                                        </value>
+                                        <next>
+                                            <block type="cmd_return">
+                                                <value name="RET">
+                                                    <shadow type="lists_create_with">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <shadow type="text">
+                                                                <field name="TEXT">will</field>
+                                                            </shadow>
+                                                        </value>
+                                                    </shadow>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+            <block type="cmd_off">
+                <value name="NAME">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="cmd_sender"></block>
+            <block type="cmd_name"></block>
+            <block type="cmd_args"></block>
+            <block type="cmd_return"></block>
+        </category>
+        <category name="任务调度" colour="#525288">
+            <block type="incidental_ignorereturn">
+                <value name="RET">
+                    <block type="runnable_later">
+                        <value name="TICK">
+                            <shadow type="math_number">
+                                <field name="NUM">20</field>
+                            </shadow>
+                        </value>
+                    </block>
+                </value>
+            </block>
+            <block type="variables_set">
+                <field name="VAR">task</field>
+                <value name="VALUE">
+                    <block type="runnable_timer">
+                        <value name="TICK">
+                            <shadow type="math_number">
+                                <field name="NUM">20</field>
+                            </shadow>
+                        </value>
+                    </block>
+                </value>
+            </block>
+            <block type="runnable_cancel">
+                <value name="TASK">
+                    <block type="variables_get">
+                        <field name="VAR">task</field>
+                    </block>
+                </value>
+            </block>
+        </category>
+        <category name="事件监听"></category>
+    </category>
+
+    <sep></sep>
+
+    <category name="逻辑" colour="#5B80A5">
+        <block type="controls_if"></block>
+        <block type="logic_compare">
+            <field name="OP">EQ</field>
+        </block>
+        <block type="logic_operation">
+            <field name="OP">AND</field>
+        </block>
+        <block type="logic_negate"></block>
+        <block type="logic_boolean">
+            <field name="BOOL">TRUE</field>
+        </block>
+        <block type="logic_null"></block>
+        <block type="logic_ternary"></block>
+    </category>
+    <category name="循环" colour="#5BA55B">
+        <block type="controls_repeat_ext">
+            <value name="TIMES">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="controls_whileUntil">
+            <field name="MODE">WHILE</field>
+        </block>
+        <block type="controls_for">
+            <field name="VAR">i</field>
+            <value name="FROM">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="TO">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+            <value name="BY">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="controls_forEach">
+            <field name="VAR">j</field>
+        </block>
+        <block type="controls_flow_statements">
+            <field name="FLOW">BREAK</field>
+        </block>
+    </category>
+    <category name="数学" colour="#5B67A5">
+        <block type="math_number">
+            <field name="NUM">0</field>
+        </block>
+        <block type="math_arithmetic">
+            <field name="OP">ADD</field>
+            <value name="A">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="B">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_single">
+            <field name="OP">ROOT</field>
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM">9</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_trig">
+            <field name="OP">SIN</field>
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM">45</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_constant">
+            <field name="CONSTANT">PI</field>
+        </block>
+        <block type="math_number_property">
+            <mutation divisor_input="false"></mutation>
+            <field name="PROPERTY">EVEN</field>
+            <value name="NUMBER_TO_CHECK">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_round">
+            <field name="OP">ROUND</field>
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM">3.1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_on_list">
+            <mutation op="SUM"></mutation>
+            <field name="OP">SUM</field>
+        </block>
+        <block type="math_modulo">
+            <value name="DIVIDEND">
+                <shadow type="math_number">
+                    <field name="NUM">64</field>
+                </shadow>
+            </value>
+            <value name="DIVISOR">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_constrain">
+            <value name="VALUE">
+                <shadow type="math_number">
+                    <field name="NUM">50</field>
+                </shadow>
+            </value>
+            <value name="LOW">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="HIGH">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_random_int">
+            <value name="FROM">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="TO">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_random_float"></block>
+    </category>
+    <category name="字符串" colour="#5BA58C">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+        <block type="text_join">
+            <mutation items="2"></mutation>
+        </block>
+        <block type="text_append">
+            <field name="VAR">item</field>
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_length">
+            <value name="VALUE">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_isEmpty">
+            <value name="VALUE">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_indexOf">
+            <field name="END">FIRST</field>
+            <value name="VALUE">
+                <block type="variables_get">
+                    <field name="VAR">text</field>
+                </block>
+            </value>
+            <value name="FIND">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_charAt">
+            <mutation at="true"></mutation>
+            <field name="WHERE">FROM_START</field>
+            <value name="VALUE">
+                <block type="variables_get">
+                    <field name="VAR">text</field>
+                </block>
+            </value>
+        </block>
+        <block type="text_getSubstring">
+            <mutation at1="true" at2="true"></mutation>
+            <field name="WHERE1">FROM_START</field>
+            <field name="WHERE2">FROM_START</field>
+            <value name="STRING">
+                <block type="variables_get">
+                    <field name="VAR">text</field>
+                </block>
+            </value>
+        </block>
+        <block type="text_changeCase">
+            <field name="CASE">UPPERCASE</field>
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_trim">
+            <field name="MODE">BOTH</field>
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+
+        <!-- 
+        <block type="text_print">
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+
+        <block type="text_prompt_ext">
+            <mutation type="TEXT"></mutation>
+            <field name="TYPE">TEXT</field>
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+        -->
+    </category>
+
+    <category name="列表" colour="#745BA5">
+        <block type="lists_create_with">
+            <mutation items="0"></mutation>
+        </block>
+        <block type="lists_create_with">
+            <mutation items="3"></mutation>
+        </block>
+        <block type="lists_repeat">
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM">5</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="lists_length"></block>
+        <block type="lists_isEmpty"></block>
+        <block type="lists_indexOf">
+            <field name="END">FIRST</field>
+            <value name="VALUE">
+                <block type="variables_get">
+                    <field name="VAR">list</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_getIndex">
+            <mutation statement="false" at="true"></mutation>
+            <field name="MODE">GET</field>
+            <field name="WHERE">FROM_START</field>
+            <value name="VALUE">
+                <block type="variables_get">
+                    <field name="VAR">list</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_setIndex">
+            <mutation at="true"></mutation>
+            <field name="MODE">SET</field>
+            <field name="WHERE">FROM_START</field>
+            <value name="LIST">
+                <block type="variables_get">
+                    <field name="VAR">list</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_getSublist">
+            <mutation at1="true" at2="true"></mutation>
+            <field name="WHERE1">FROM_START</field>
+            <field name="WHERE2">FROM_START</field>
+            <value name="LIST">
+                <block type="variables_get">
+                    <field name="VAR">list</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_split">
+            <mutation mode="SPLIT"></mutation>
+            <field name="MODE">SPLIT</field>
+            <value name="DELIM">
+                <shadow type="text">
+                    <field name="TEXT">,</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="lists_sort">
+            <field name="TYPE">NUMERIC</field>
+            <field name="DIRECTION">1</field>
+        </block>
+    </category>
+    <category name="颜色" colour="#A5745B">
+        <block type="colour_picker">
+            <field name="COLOUR">#ff0000</field>
+        </block>
+        <block type="colour_random"></block>
+        <block type="colour_rgb">
+            <value name="RED">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+            <value name="GREEN">
+                <shadow type="math_number">
+                    <field name="NUM">50</field>
+                </shadow>
+            </value>
+            <value name="BLUE">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="colour_blend">
+            <value name="COLOUR1">
+                <shadow type="colour_picker">
+                    <field name="COLOUR">#ff0000</field>
+                </shadow>
+            </value>
+            <value name="COLOUR2">
+                <shadow type="colour_picker">
+                    <field name="COLOUR">#3333ff</field>
+                </shadow>
+            </value>
+            <value name="RATIO">
+                <shadow type="math_number">
+                    <field name="NUM">0.5</field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+
+    <sep></sep>
+
+    <category name="变量" colour="#a55b80" custom="VARIABLE"></category>
+    <category name="函数" colour="#995ba5" custom="PROCEDURE"></category>
+
+</xml>
