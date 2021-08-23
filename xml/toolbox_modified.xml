@@ -274,11 +274,34 @@
             </block>
             <block type="inventory_type"></block>
             <block type="inventory_size"></block>
-            <block type="inventory_prop_mod"></block>
+            <block type="inventory_prop_mod">
+                <field name="TYPE">SETTER</field>
+                <field name="OPTION">CONTENTS</field>
+                <value name="INV">
+                    <block type="inventory_player">
+                        <value name="PLAYER">
+                            <block type="player_me"></block>
+                        </value>
+                        <field name="OPERATION">GET</field>
+                    </block>
+                </value>
+            </block>
             <block type="inventory_player">
+                <value name="PLAYER">
+                    <shadow type="player_me"></shadow>
+                </value>
                 <field name="OPERATION">GET</field>
             </block>
-            <block type="inventory_addersetter">
+            <block type="inventory_adder">
+                <field name="OPERATION">ADD</field>
+                <value name="INV">
+                    <block type="inventory_player">
+                        <value name="PLAYER">
+                            <block type="player_me"></block>
+                        </value>
+                        <field name="OPERATION">GET</field>
+                    </block>
+                </value>
                 <value name="SLOT">
                     <shadow type="logic_null"></shadow>
                 </value>
