@@ -123,9 +123,9 @@
                         </block>
                     </value>
                     <value name="VALUE">
-                        <shadow type="text">
+                        <block type="text">
                             <field name="TEXT"></field>
-                        </shadow>
+                        </block>
                     </value>
                 </block>
                 <block type="itemmeta_ench">
