@@ -1,7 +1,7 @@
 function exportJS() {
     if (window.confirm("是否将项目以 JavaScript 形式导出?")) {
         var blob = new Blob(
-            [document.getElementById("jsUncompressed").innerHTML],
+            [document.getElementById('blocklyArea').contentWindow.generateJS()],
             { type: "text/plain;charset=utf-8" }
         );
         saveAs(blob, "project.js");
@@ -10,7 +10,7 @@ function exportJS() {
 function exportMS() {
     if (window.confirm("是否将项目以 MiaoScript 形式导出?")) {
         var blob = new Blob(
-            [document.getElementById("msUncompressed").innerHTML],
+            [document.getElementById('blocklyArea').contentWindow.generateMS()],
             { type: "text/plain;charset=utf-8" }
         );
         saveAs(blob, "project.js");
@@ -19,15 +19,19 @@ function exportMS() {
 function exportXML() {
     if (window.confirm("是否将项目以 XML 形式导出?")) {
         var blob = new Blob(
-            [document.getElementById("xmlPretty").innerHTML],
+            [document.getElementById('blocklyArea').contentWindow.generateXML()],
             { type: "text/plain;charset=utf-8" }
         );
         saveAs(blob, "project.xml");
     }
 }
-function importXML() {
+document.querySelector("xml_input_container").addEventListener("change", importXML);
+function importXML(e) {
     if (window.confirm("是否加载该 XML? 现有项目将被清空!")) {
-        frame.contentWindow.postMessage(['xml', ''], "*");
+        var fileReader = new FileReader();
+        var file = e.target.files[0];
+        var txt = fileReader.readAsText(file);
+        frame.contentWindow.postMessage(['xml', txt], "*");
     }
 }
 

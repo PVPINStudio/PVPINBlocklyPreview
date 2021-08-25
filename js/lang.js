@@ -1,14 +1,16 @@
 function generate() {
     var code_js = generateJS();
     var code_ms = generateMS();
-    var xml_text = Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(workspace));
+    var xml_text = generateXML();
 
     document.getElementById("jsUncompressed").innerHTML = code_js;
     document.getElementById("msUncompressed").innerHTML = code_ms;
     document.getElementById("xmlPretty").innerHTML = xml_text.replace(/</g, "&lt;");
 }
 // Update Code & XML
-
+function generateXML() {
+    return Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(workspace));
+}
 function generateJS() {
     Blockly.JavaScript.addReservedWords('code');
     Blockly.JavaScript.addReservedWords('name');
