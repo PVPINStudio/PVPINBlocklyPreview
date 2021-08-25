@@ -280,7 +280,7 @@
                 <value name="INV">
                     <block type="inventory_player">
                         <value name="PLAYER">
-                            <block type="player_me"></block>
+                            <shadow type="player_me"></shadow>
                         </value>
                         <field name="OPERATION">GET</field>
                     </block>
@@ -297,7 +297,7 @@
                 <value name="INV">
                     <block type="inventory_player">
                         <value name="PLAYER">
-                            <block type="player_me"></block>
+                            <shadow type="player_me"></shadow>
                         </value>
                         <field name="OPERATION">GET</field>
                     </block>
@@ -321,27 +321,37 @@
                     </shadow>
                 </value>
             </block>
-            <block type="inventory_clear"></block>
+            <block type="inventory_clear">
+                <value name="INV">
+                    <block type="inventory_player">
+                        <value name="PLAYER">
+                            <shadow type="player_me"></shadow>
+                        </value>
+                        <field name="OPERATION">GET</field>
+                    </block>
+                </value>
+            </block>
             <block type="inventory_contains">
+                <value name="INV">
+                    <block type="inventory_player">
+                        <value name="PLAYER">
+                            <shadow type="player_me"></shadow>
+                        </value>
+                        <field name="OPERATION">GET</field>
+                    </block>
+                </value>
                 <field name="OPERATION">ITEM</field>
             </block>
             <block type="inventory_first">
-                <field name="OPERATION">ITEM</field>
-                <value name="ITEM">
-                    <shadow type="itemstack_cons">
-                        <value name="MAT">
-                            <shadow type="material_search_latest">
-                                <field name="MAT">HEART_OF_THE_SEA</field>
-                                <field name="KEY">海洋之心</field>
-                            </shadow>
+                <value name="INV">
+                    <block type="inventory_player">
+                        <value name="PLAYER">
+                            <shadow type="player_me"></shadow>
                         </value>
-                        <value name="COUNT">
-                            <shadow type="math_number">
-                                <field name="NUM">1</field>
-                            </shadow>
-                        </value>
-                    </shadow>
+                        <field name="OPERATION">GET</field>
+                    </block>
                 </value>
+                <field name="OPERATION">ITEM</field>
             </block>
         </category>
 
