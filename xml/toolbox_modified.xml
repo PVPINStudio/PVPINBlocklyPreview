@@ -949,33 +949,6 @@
                     </shadow>
                 </value>
             </block>
-            <block type="world_getblock_location">
-                <value name="WORLD">
-                    <shadow type="world_get">
-                        <field name="OPERATION">NAME</field>
-                        <value name="VALUE">
-                            <shadow type="text">
-                                <field name="TEXT">world</field>
-                            </shadow>
-                        </value>
-                    </shadow>
-                </value>
-                <value name="X">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-                <value name="Y">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-                <value name="Z">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-            </block>
         </category>
 
         <category name="其他" colour="#7A7374">
