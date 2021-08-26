@@ -25,13 +25,15 @@ function exportXML() {
         saveAs(blob, "project.xml");
     }
 }
-document.querySelector("xml_input_container").addEventListener("change", importXML);
-function importXML(e) {
+function importXML(files) {
     if (window.confirm("是否加载该 XML? 现有项目将被清空!")) {
         var fileReader = new FileReader();
-        var file = e.target.files[0];
-        var txt = fileReader.readAsText(file);
-        frame.contentWindow.postMessage(['xml', txt], "*");
+        var file = files[0];
+        fileReader.readAsText(file);
+        fileReader.onloadend = function (e) {
+            frame.contentWindow.postMessage(['xml', e.target.result], "*");
+        }
+        document.getElementById("xml_input_container").value = null;
     }
 }
 
@@ -45,7 +47,7 @@ function updateCode() {
         = document.getElementById('blocklyArea').contentWindow.document.getElementById('xmlPretty').innerHTML;
     document.querySelectorAll('pre code').forEach((block) => {
         hljs.highlightBlock(block);
-        hljs.lineNumbersBlock(block, {});
+        hljs.lineNumbersBlock(block, { });
     });
 }
 
