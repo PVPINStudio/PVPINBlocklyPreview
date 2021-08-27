@@ -40,8 +40,7 @@
         <category name="物品" colour="#F33B1F">
             <category name="材质" colour="#f33b1f">
                 <block type="material_search_latest">
-                    <field name="MAT">IRON_SWORD</field>
-                    <field name="KEY">剑</field>
+                    <field name="KEY">海洋之心</field>
                 </block>
                 <block type="material_match_latest">
                     <field name="OPERATION">MATCH</field>
@@ -53,8 +52,7 @@
                     </value>
                 </block>
                 <block type="material_search_1_12">
-                    <field name="MAT">WOOD_SWORD</field>
-                    <field name="KEY">SWORD</field>
+                    <field name="KEY">PRISMARINE_CRYSTALS</field>
                 </block>
                 <block type="material_match_1_12">
                     <field name="OPERATION">MATCH</field>
@@ -68,6 +66,11 @@
 
             <category name="物品堆" colour="#f33b1f">
                 <block type="itemstack_cons">
+                    <value name="MAT">
+                        <shadow type="material_search_latest">
+                            <field name="KEY">海洋之心</field>
+                        </shadow>
+                    </value>
                     <value name="COUNT">
                         <shadow type="math_number">
                             <field name="NUM">1</field>
@@ -763,115 +766,119 @@
             </block>
         </category>
 
-        <category name="效果" colour="#BA2F7B">
-            <block type="effect_worldplayparticle">
-                <value name="PARTICLE">
-                    <block type="effect_particleenum">
-                        <field name="PARTICLE">DOLPHIN</field>
-                        <field name="KEY">DOLPHIN</field>
-                    </block>
-                </value>
-                <value name="COUNT">
-                    <shadow type="math_number">
-                        <field name="NUM">1</field>
-                    </shadow>
-                </value>
-                <value name="X">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-                <value name="Y">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-                <value name="Z">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-                <value name="EXTRA">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="effect_playerplayparticle">
-                <value name="PLAYER">
-                    <shadow type="player_me"></shadow>
-                </value>
-                <value name="PARTICLE">
-                    <block type="effect_particleenum">
-                        <field name="PARTICLE">DOLPHIN</field>
-                        <field name="KEY">DOLPHIN</field>
-                    </block>
-                </value>
-                <value name="COUNT">
-                    <shadow type="math_number">
-                        <field name="NUM">1</field>
-                    </shadow>
-                </value>
-                <value name="X">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-                <value name="Y">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-                <value name="Z">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-                <value name="EXTRA">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="effect_playerplaysound">
-                <value name="PLAYER">
-                    <shadow type="player_me"></shadow>
-                </value>
-                <value name="SOUND">
-                    <block type="effect_soundenum">
-                        <field name="SOUND">ENTITY_DOLPHIN_AMBIENT</field>
-                        <field name="KEY">海豚</field>
-                    </block>
-                </value>
-                <value name="VOLUME">
-                    <shadow type="math_number">
-                        <field name="NUM">1</field>
-                    </shadow>
-                </value>
-                <value name="PITCH">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="effect_worldplaysound">
-                <value name="SOUND">
-                    <block type="effect_soundenum">
-                        <field name="SOUND">ENTITY_DOLPHIN_AMBIENT</field>
-                        <field name="KEY">海豚</field>
-                    </block>
-                </value>
-                <value name="VOLUME">
-                    <shadow type="math_number">
-                        <field name="NUM">1</field>
-                    </shadow>
-                </value>
-                <value name="PITCH">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-            </block>
+        <category name="显示" colour="#BA2F7B">
+            <category name="效果" colour="#BA2F7B">
+                <block type="effect_worldplayparticle">
+                    <value name="PARTICLE">
+                        <block type="effect_particleenum">
+                            <field name="PARTICLE">DOLPHIN</field>
+                            <field name="KEY">DOLPHIN</field>
+                        </block>
+                    </value>
+                    <value name="COUNT">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                    <value name="X">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="Y">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="Z">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="EXTRA">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="effect_playerplayparticle">
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="PARTICLE">
+                        <block type="effect_particleenum">
+                            <field name="PARTICLE">DOLPHIN</field>
+                            <field name="KEY">DOLPHIN</field>
+                        </block>
+                    </value>
+                    <value name="COUNT">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                    <value name="X">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="Y">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="Z">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="EXTRA">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="effect_playerplaysound">
+                    <value name="PLAYER">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="SOUND">
+                        <block type="effect_soundenum">
+                            <field name="SOUND">ENTITY_DOLPHIN_AMBIENT</field>
+                            <field name="KEY">海豚</field>
+                        </block>
+                    </value>
+                    <value name="VOLUME">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                    <value name="PITCH">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="effect_worldplaysound">
+                    <value name="SOUND">
+                        <block type="effect_soundenum">
+                            <field name="SOUND">ENTITY_DOLPHIN_AMBIENT</field>
+                            <field name="KEY">海豚</field>
+                        </block>
+                    </value>
+                    <value name="VOLUME">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                    <value name="PITCH">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+            <category name="血条" colour="#BA2F7B"></category>
+            <category name="计分板" colour="#BA2F7B"></category>
         </category>
 
         <category name="世界" colour="#458B74">
@@ -1088,7 +1095,7 @@
                 </value>
             </block>
         </category>
-        <category name="事件监听"></category>
+        <category name="事件监听" colour="#525288"></category>
     </category>
 
     <sep></sep>
