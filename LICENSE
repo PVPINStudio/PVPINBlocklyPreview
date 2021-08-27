@@ -1,0 +1,24 @@
+Copyright William-Shi233 , freeze-dolphin and gryphs.
+
+All Rights Reserved.
+
+本项目指 PVPINBlocklyEditor 项目，下同。
+
+本项目著作权人指 William-Shi233 、 freeze-dolphin 和 gryphs，下同。
+
+本项目著作权人保留所有权利。
+
+本项目源代码指 www.github.com/PVPINStudio/PVPINBlocklyEditor 仓库内的所有除了 lib/blockly_2021q2 文件夹和 lib/blockly-samples 文件夹和 lib/highlight.js 文件夹内所有文件的一切其他文件，下同。
+
+本项目著作权人拥有不受限制地使用、修改、复制、分发和/或再分发本项目源代码或编译、转译后代码的权利，并且可以根据需要更改后续版本的授权，不必保留先前的许可。
+
+在未经授权的情况下，禁止非著作权人修改、复制、分发和/或再分发本项目源代码或编译、转译后代码。
+
+允许非著作权人使用本项目编译后代码，通过搭积木的方式进行 JavaScript 插件开发。非著作权人拥有他们使用本项目开发得到的 JavaScript 插件源代码、MiaoScript 插件源代码和/或 XML 形式储存的积木的著作权。
+
+使用本项目开发得到的 JavaScript 插件源代码、 MiaoScript 插件源代码指通过搭积木的方式开发，由积木生成的 JavaScript 、MiaoScript 代码，不包括本项目的源代码。
+
+使用本项目开发得到的 XML 形式储存的积木指通过搭积木的方式开发，由 Blockly.Xml.textToDom 方法生成的用以保存当前 Workspace 的全部积木的 XML 代码。不包括本项目源代码中的 Toolbox 部分。
+
+最终解释权归本项目著作权人所有。
+
