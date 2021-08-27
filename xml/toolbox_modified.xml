@@ -38,7 +38,7 @@
         </category>
 
         <category name="物品" colour="#F33B1F">
-            <category name="材质" colour="#F28E16">
+            <category name="材质" colour="#f33b1f">
                 <block type="material_search_latest">
                     <field name="MAT">IRON_SWORD</field>
                     <field name="KEY">剑</field>
@@ -66,7 +66,7 @@
                 </block>
             </category>
 
-            <category name="物品堆" colour="#F28E16">
+            <category name="物品堆" colour="#f33b1f">
                 <block type="itemstack_cons">
                     <value name="COUNT">
                         <shadow type="math_number">
@@ -328,6 +328,17 @@
         </category>
 
         <category name="实体" colour="#29b7cb">
+            <category name="实体类型" colour="#29b7cb">
+                <block type="entity_type_search"></block>
+                <block type="entity_type_valueof">
+                    <value name="TYPE">
+                        <shadow type="text">
+                            <field name="TEXT">DOLPHIN</field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+
             <category name="实体" colour="#29b7cb">
                 <block type="variables_set">
                     <field name="VAR">entity</field>
@@ -386,18 +397,7 @@
                 </block>
             </category>
 
-            <category name="实体类型" colour="#51c4d3">
-                <block type="entity_type_search"></block>
-                <block type="entity_type_valueof">
-                    <value name="TYPE">
-                        <shadow type="text">
-                            <field name="TEXT">DOLPHIN</field>
-                        </shadow>
-                    </value>
-                </block>
-            </category>
-
-            <category name="生物实体" colour="#43CD80">
+            <category name="生物实体" colour="#29b7cb">
                 <block type="livingentity_prop_mod"></block>
                 <block type="livingentity_attack"></block>
                 <block type="livingentity_potioneffectgettersetter">
@@ -442,6 +442,51 @@
                     </value>
                 </block>
                 <block type="livingentity_swing_hand"></block>
+            </category>
+
+            <category name="抛射物" colour="#29b7cb">
+                <block type="variables_set">
+                    <field name="VAR">projectileEntity</field>
+                    <value name="VALUE">
+                        <block type="projectile_launch_without_vec">
+                            <value name="ETY">
+                                <shadow type="player_me"></shadow>
+                            </value>
+                            <value name="TYPE">
+                                <shadow type="projectile_types">
+                                    <field name="TYPE">Arrow</field>
+                                </shadow>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+                <block type="projectile_prop">
+                    <mutation statement="true" input="true"></mutation>
+                    <field name="TYPE">SETTER</field>
+                    <field name="OPERATION">SHOOTER</field>
+                    <value name="PROJECTILE">
+                        <block type="variables_get">
+                            <field name="VAR">projectileEntity</field>
+                        </block>
+                    </value>
+                    <value name="INPUT">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
+                <block type="projectile_launch">
+                    <value name="ETY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="VEC">
+                        <shadow type="vector_empty"></shadow>
+                    </value>
+                    <value name="TYPE">
+                        <shadow type="projectile_types">
+                            <field name="TYPE">Arrow</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="projectile_types"></block>
             </category>
 
             <category name="玩家" colour="#B78D12">
@@ -581,50 +626,6 @@
                 </block>
             </category>
 
-            <category name="抛射物" colour="#8A2BE2">
-                <block type="variables_set">
-                    <field name="VAR">projectileEntity</field>
-                    <value name="VALUE">
-                        <block type="projectile_launch_without_vec">
-                            <value name="ETY">
-                                <shadow type="player_me"></shadow>
-                            </value>
-                            <value name="TYPE">
-                                <shadow type="projectile_types">
-                                    <field name="TYPE">Arrow</field>
-                                </shadow>
-                            </value>
-                        </block>
-                    </value>
-                </block>
-                <block type="projectile_prop">
-                    <mutation statement="true" input="true"></mutation>
-                    <field name="TYPE">SETTER</field>
-                    <field name="OPERATION">SHOOTER</field>
-                    <value name="PROJECTILE">
-                        <block type="variables_get">
-                            <field name="VAR">projectileEntity</field>
-                        </block>
-                    </value>
-                    <value name="INPUT">
-                        <shadow type="player_me"></shadow>
-                    </value>
-                </block>
-                <block type="projectile_launch">
-                    <value name="ETY">
-                        <shadow type="player_me"></shadow>
-                    </value>
-                    <value name="VEC">
-                        <shadow type="vector_empty"></shadow>
-                    </value>
-                    <value name="TYPE">
-                        <shadow type="projectile_types">
-                            <field name="TYPE">Arrow</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="projectile_types"></block>
-            </category>
         </category>
 
         <category name="向量" colour="#5BAE23">
