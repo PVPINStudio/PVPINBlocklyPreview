@@ -172,7 +172,7 @@
                     </value>
                     <value name="ATTR">
                         <block type="attr_typeenum">
-                            <field name="VALUE">GENERIC_ARMOR</field>
+                            <field name="VALUE">HORSE_JUMP_STRENGTH</field>
                         </block>
                     </value>
                     <value name="MODIFIER">
@@ -356,18 +356,22 @@
                         </block>
                     </value>
                 </block>
-                <block type="entity_prop_mod"></block>
+                <block type="entity_prop_mod">
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
                 <block type="controls_if">
                     <value name="IF0">
                         <block type="logic_compare">
                             <field name="OP">EQ</field>
                             <value name="A">
                                 <block type="entity_prop_mod">
-                                    <mutation statement="false" input="false"></mutation>
+                                    <mutation type="GETTER" field="POSE"></mutation>
                                     <field name="TYPE">GETTER</field>
                                     <field name="OPTION">POSE</field>
                                     <value name="ENTITY">
-                                        <block type="player_me"></block>
+                                        <shadow type="player_me"></shadow>
                                     </value>
                                 </block>
                             </value>
@@ -379,9 +383,22 @@
                         </block>
                     </value>
                 </block>
-                <block type="entity_delete"></block>
-                <block type="entity_tp"></block>
+                <block type="entity_delete">
+                    <value name="ENTITY">
+                        <block type="variables_get">
+                            <field name="VAR">entity</field>
+                        </block>
+                    </value>
+                </block>
+                <block type="entity_tp">
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
                 <block type="entity_nearby">
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
                     <value name="X">
                         <block type="math_number">
                             <field name="NUM">5</field>
@@ -401,9 +418,20 @@
             </category>
 
             <category name="生物实体" colour="#29b7cb">
-                <block type="livingentity_prop_mod"></block>
-                <block type="livingentity_attack"></block>
+                <block type="livingentity_prop_mod">
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
+                <block type="livingentity_attack">
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
                 <block type="livingentity_potioneffectgettersetter">
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
                     <field name="OPTION">ADD</field>
                     <value name="EFF">
                         <block type="potion_constructor">
@@ -444,7 +472,43 @@
                         </block>
                     </value>
                 </block>
-                <block type="livingentity_swing_hand"></block>
+                <block type="livingentity_attr">
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="ATTR">
+                        <block type="attr_typeenum">
+                            <field name="VALUE">HORSE_JUMP_STRENGTH</field>
+                        </block>
+                    </value>
+                    <value name="MODIFIER">
+                        <block type="attr_cons">
+                            <value name="NAME">
+                                <block type="text">
+                                    <field name="TEXT"></field>
+                                </block>
+                            </value>
+                            <value name="AMOUNT">
+                                <block type="math_number">
+                                    <field name="NUM">0</field>
+                                </block>
+                            </value>
+                            <value name="OPERATION">
+                                <block type="attr_operationenum">
+                                    <field name="VALUE">ADD_NUMBER</field>
+                                </block>
+                            </value>
+                            <value name="SLOT">
+                                <block type="logic_null"></block>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+                <block type="livingentity_swing_hand">
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
             </category>
 
             <category name="抛射物" colour="#29b7cb">
@@ -464,7 +528,7 @@
                     </value>
                 </block>
                 <block type="projectile_prop">
-                    <mutation statement="true" input="true"></mutation>
+                    <mutation type="SETTER" field="SHOOTER"></mutation>
                     <field name="TYPE">SETTER</field>
                     <field name="OPERATION">SHOOTER</field>
                     <value name="PROJECTILE">
@@ -631,7 +695,7 @@
 
         </category>
 
-        <category name="向量" colour="#5BAE23">
+        <category name="向量" colour="#458B74">
             <block type="vector_empty"></block>
             <block type="vector_constructor">
                 <mutation xmlns="http://www.w3.org/1999/xhtml" vector_input="false"></mutation>
