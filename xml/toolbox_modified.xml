@@ -1502,6 +1502,89 @@
             <field name="DIRECTION">1</field>
         </block>
     </category>
+    <category name="Map" colour="#745BA5">
+        <block type="variables_set">
+            <field name="VAR" id="m-:W+$JbbzGd8|K0{h|P">map</field>
+            <value name="VALUE">
+                <block type="map_cons"></block>
+            </value>
+        </block>
+        <block type="variables_set">
+            <field name="VAR" id="m-:W+$JbbzGd8|K0{h|P">map</field>
+            <value name="VALUE">
+                <block type="map_persistencevalue"></block>
+            </value>
+        </block>
+        <block type="map_gettersetter">
+            <field name="TYPE">SETTER</field>
+            <value name="MAP">
+                <block type="variables_get">
+                    <field name="VAR" id="m-:W+$JbbzGd8|K0{h|P">map</field>
+                </block>
+            </value>
+            <value name="K">
+                <shadow type="text">
+                    <field name="TEXT">Pony</field>
+                </shadow>
+            </value>
+            <value name="V">
+                <shadow type="text">
+                    <field name="TEXT">小马</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="controls_if">
+            <value name="IF0">
+                <block type="map_contains">
+                    <value name="MAP">
+                        <block type="variables_get">
+                            <field name="VAR" id="m-:W+$JbbzGd8|K0{h|P">map</field>
+                        </block>
+                    </value>
+                    <value name="K">
+                        <shadow type="text">
+                            <field name="TEXT">Pony</field>
+                        </shadow>
+                    </value>
+                </block>
+            </value>
+        </block>
+        <block type="map_loop">
+            <field name="K" id="-Q{SyGg|d)jRgSTOI.h5">key</field>
+            <value name="MAP">
+                <block type="variables_get">
+                    <field name="VAR" id="m-:W+$JbbzGd8|K0{h|P">map</field>
+                </block>
+            </value>
+            <statement name="STMT">
+                <block type="variables_set">
+                    <field name="VAR" id="Jw7*.~1S]#[7]{jFfb_/">value</field>
+                    <value name="VALUE">
+                        <block type="map_gettersetter" id="b4y]8ykysym1gVgP~(Ni">
+                            <mutation field="GETTER"></mutation>
+                            <field name="TYPE">GETTER</field>
+                            <value name="MAP">
+                                <block type="variables_get" id="b%p=I{{S+DZbpFuO#$;`">
+                                    <field name="VAR" id="m-:W+$JbbzGd8|K0{h|P">map</field>
+                                </block>
+                            </value>
+                            <value name="K">
+                                <shadow type="text" id="ec0hj}jB*uCcT}jb6?RO">
+                                    <field name="TEXT">Pony</field>
+                                </shadow>
+                                <block type="variables_get" id="MzrE4-:n?|p!1_SG%!Un">
+                                    <field name="VAR" id="-Q{SyGg|d)jRgSTOI.h5">key</field>
+                                </block>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+            </statement>
+        </block>
+        <block type="map_persistencestmt">
+            <field name="OPERATION">LOAD</field>
+        </block>
+    </category>
     <category name="颜色" colour="#A5745B">
         <block type="colour_picker">
             <field name="COLOUR">#ff0000</field>

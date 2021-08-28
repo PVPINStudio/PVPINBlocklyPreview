@@ -32,8 +32,8 @@ function registerEventListener(eventType, priority, ignoreCancelled, callback) {
  *     function (sender, cmd, args) {
  *         return ["tab", "complete"];
  *     });
- * 注：sender会进行转换以确保类型为 org.bukkit.entity.Player 或 org.bukkit.command.ConsoleCommandSender
- * 注：cmd为
+ * 注：sender类型为 org.bukkit.entity.Player 或 org.bukkit.command.ConsoleCommandSender 等
+ * 注：cmd为 org.bukkit.command.PluginCommand
  * 注：args为String[]
  * @param {String} name 指令名
  * @param {*} cmdCallback 指令被执行的回调
@@ -76,6 +76,26 @@ function runTaskLater(delay, async, callback) {
  * @param {*} task 任务对象
  */
 function cancelTask(task) {
+}
+
+/**
+ * 获取持久化Map用来永久保存数据
+ * 这个Map应当对应着本地的文件，以供保存读取
+ * 这个Map应当是唯一的，即一个插件通过这个方法只能获取到一个Map对象
+ */
+function getDataMap() {
+}
+
+/**
+ * 读取本地文件，并覆盖当前内存中的持久化Map
+ */
+function readPersistentDataFromFile() {
+}
+
+/**
+ * 将当前内存中的持久化Map写入文件并覆盖文件内容
+ */
+function savePersistentDataToFile() {
 }
 
 /**
