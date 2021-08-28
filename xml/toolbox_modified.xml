@@ -176,7 +176,13 @@
                         </block>
                     </value>
                     <value name="MODIFIER">
+                        <field name="OPERATION">ADD</field>
                         <block type="attr_cons">
+                            <value name="UUID">
+                                <block type="unclassified_uuid">
+                                    <field name="OPERATION">RANDOM</field>
+                                </block>
+                            </value>
                             <value name="NAME">
                                 <block type="text">
                                     <field name="TEXT"></field>
@@ -483,6 +489,11 @@
                     </value>
                     <value name="MODIFIER">
                         <block type="attr_cons">
+                            <value name="UUID">
+                                <block type="unclassified_uuid">
+                                    <field name="OPERATION">RANDOM</field>
+                                </block>
+                            </value>
                             <value name="NAME">
                                 <block type="text">
                                     <field name="TEXT"></field>
@@ -1006,6 +1017,14 @@
         </category>
 
         <category name="其他" colour="#7A7374">
+            <block type="unclassified_uuid">
+                <field name="OPERATION">STR</field>
+                <value name="STR">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
             <block type="unclassified_ticks_to_sec">
                 <value name="SEC">
                     <shadow type="math_number">
@@ -1020,7 +1039,6 @@
                     </shadow>
                 </value>
             </block>
-            <block type="unclassified_boolean_checkbox"></block>
             <block type="incidental_ignorereturn"></block>
             <block type="incidental_convertion"></block>
             <block type="incidental_comment">
