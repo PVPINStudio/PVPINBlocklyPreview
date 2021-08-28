@@ -479,6 +479,7 @@
                     </value>
                 </block>
                 <block type="livingentity_attr">
+                    <field name="OPERATION">ADD</field>
                     <value name="ENTITY">
                         <shadow type="player_me"></shadow>
                     </value>
@@ -1033,9 +1034,10 @@
                 </value>
             </block>
             <block type="unclassified_colour">
+                <field name="OPERATION">CUSTOM</field>
                 <value name="STR">
                     <shadow type="text">
-                        <field name="TEXT"></field>
+                        <field name="TEXT">这行字是红色的</field>
                     </shadow>
                 </value>
             </block>
