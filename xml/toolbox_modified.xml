@@ -434,6 +434,7 @@
                         <shadow type="player_me"></shadow>
                     </value>
                 </block>
+                <block type="livingentity_equipment"></block>
                 <block type="livingentity_potioneffectgettersetter">
                     <value name="ENTITY">
                         <shadow type="player_me"></shadow>
