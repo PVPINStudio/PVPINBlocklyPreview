@@ -708,6 +708,66 @@
 
         </category>
 
+        <category name="世界" colour="#458B74">
+            <block type="world_list"></block>
+            <block type="world_get">
+                <field name="OPERATION">NAME</field>
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="world_propgettersetter">
+                <field name="TYPE">SETTER</field>
+                <field name="OPTION">DIFFICULTY</field>
+                <value name="INPUT">
+                    <block type="world_difficulty">
+                        <field name="VALUE">HARD</field>
+                    </block>
+                </value>
+            </block>
+            <block type="world_unload"></block>
+            <block type="world_environment">
+                <field name="VALUE">CUSTOM</field>
+            </block>
+            <block type="world_difficulty">
+                <field name="VALUE">EASY</field>
+            </block>
+            <block type="world_getblockchunk">
+                <field name="OPERATION">BLOCK</field>
+            </block>
+            <block type="world_chunkforceloaded">
+                <value name="LOADED">
+                    <shadow type="logic_boolean">
+                        <field name="BOOL">TRUE</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="world_chunkload">
+                <field name="OPERATION">UNLOAD</field>
+            </block>
+            <block type="world_generatetree">
+                <value name="TYPE">
+                    <shadow type="world_treetype">
+                        <field name="TYPE">ACACIA</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="world_treetype">
+                <field name="TYPE">ACACIA</field>
+            </block>
+            <block type="world_generateexplosion">
+                <field name="FIRE">TRUE</field>
+                <field name="BLOCKS">TRUE</field>
+                <value name="POWER">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+
         <category name="向量" colour="#458B74">
             <block type="vector_empty"></block>
             <block type="vector_constructor">
@@ -958,66 +1018,6 @@
             <category name="计分板" colour="#BA2F7B"></category>
         </category>
 
-        <category name="世界" colour="#458B74">
-            <block type="world_list"></block>
-            <block type="world_get">
-                <field name="OPERATION">NAME</field>
-                <value name="VALUE">
-                    <shadow type="text">
-                        <field name="TEXT"></field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="world_propgettersetter">
-                <field name="TYPE">SETTER</field>
-                <field name="OPTION">DIFFICULTY</field>
-                <value name="INPUT">
-                    <block type="world_difficulty">
-                        <field name="VALUE">HARD</field>
-                    </block>
-                </value>
-            </block>
-            <block type="world_unload"></block>
-            <block type="world_environment">
-                <field name="VALUE">CUSTOM</field>
-            </block>
-            <block type="world_difficulty">
-                <field name="VALUE">EASY</field>
-            </block>
-            <block type="world_getblockchunk">
-                <field name="OPERATION">BLOCK</field>
-            </block>
-            <block type="world_chunkforceloaded">
-                <value name="LOADED">
-                    <shadow type="logic_boolean">
-                        <field name="BOOL">TRUE</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="world_chunkload">
-                <field name="OPERATION">UNLOAD</field>
-            </block>
-            <block type="world_generatetree">
-                <value name="TYPE">
-                    <shadow type="world_treetype">
-                        <field name="TYPE">ACACIA</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="world_treetype">
-                <field name="TYPE">ACACIA</field>
-            </block>
-            <block type="world_generateexplosion">
-                <field name="FIRE">TRUE</field>
-                <field name="BLOCKS">TRUE</field>
-                <value name="POWER">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-            </block>
-        </category>
-
         <category name="其他" colour="#7A7374">
             <block type="unclassified_uuid">
                 <field name="OPERATION">STR</field>
@@ -1180,7 +1180,26 @@
                 </value>
             </block>
         </category>
-        <category name="事件监听" colour="#525288"></category>
+        <category name="事件监听" colour="#525288">
+            <category name="自定义事件" colour="#525288">
+                <block type="event_customlis">
+                    <value name="EVENT">
+                        <shadow type="incidental_jsvalue1">
+                            <field name="JS">'org.bukkit.event.entity.HorseJumpEvent'</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="event_customlisparams">
+                    <field name="PRIORITY">MONITOR</field>
+                    <field name="IC">FALSE</field>
+                    <value name="EVENT">
+                        <shadow type="incidental_jsvalue1">
+                            <field name="JS">'org.bukkit.event.entity.HorseJumpEvent'</field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+        </category>
     </category>
 
     <sep></sep>
