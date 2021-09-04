@@ -434,7 +434,17 @@
                         <shadow type="player_me"></shadow>
                     </value>
                 </block>
-                <block type="livingentity_equipment"></block>
+                <block type="livingentity_equipment">
+                    <mutation type="GETTER"></mutation>
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                    <value name="SLOT">
+                        <shadow type="itemmeta_slotenum">
+                            <field name="VALUE">HAND</field>
+                        </shadow>
+                    </value>
+                </block>
                 <block type="livingentity_potioneffectgettersetter">
                     <value name="ENTITY">
                         <shadow type="player_me"></shadow>
