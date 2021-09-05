@@ -346,6 +346,11 @@
                         </shadow>
                     </value>
                 </block>
+                <block type="entity_instanceof">
+                    <value name="ENTITY">
+                        <shadow type="player_me"></shadow>
+                    </value>
+                </block>
             </category>
 
             <category name="实体" colour="#29b7cb">
