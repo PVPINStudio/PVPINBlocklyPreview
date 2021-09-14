@@ -817,6 +817,9 @@
                 <mutation type="GETTER" field="X"></mutation>
                 <field name="TYPE">GETTER</field>
                 <field name="OPERATION">X</field>
+                <value name="VEC">
+                    <shadow type="vector_empty"></shadow>
+                </value>
             </block>
             <block type="vector_convert">
                 <field name="OPERATION">VECTOLOC</field>
