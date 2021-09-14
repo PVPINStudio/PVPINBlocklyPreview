@@ -40,7 +40,11 @@ function log(msg) {
 }
 
 function registerEventListener(eventType, priority, ignoreCancelled, callback) {
-    event.listen(self, eventType.split(".")[eventType.split(".").length - 1], callback, priority.name(), ignoreCancelled);
+    return event.listen(self, eventType.split(".")[eventType.split(".").length - 1], callback, priority.name(), ignoreCancelled);
+}
+
+function unregisterEventListener(listener) {
+    listener();
 }
 
 function registerCommand(name, cmdCallback, tabCallback) {

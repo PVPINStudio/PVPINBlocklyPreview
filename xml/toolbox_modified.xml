@@ -1213,6 +1213,27 @@
                         </shadow>
                     </value>
                 </block>
+                <block type="variables_set">
+                    <field name="VAR">listener</field>
+                    <value name="VALUE">
+                        <block type="event_customlisparamsvalue">
+                            <field name="PRIORITY">MONITOR</field>
+                            <field name="IC">FALSE</field>
+                            <value name="EVENT">
+                                <shadow type="incidental_jsvalue1">
+                                    <field name="JS">'org.bukkit.event.entity.HorseJumpEvent'</field>
+                                </shadow>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+                <block type="event_unregister">
+                    <value name="LISTENER">
+                        <block type="variables_get">
+                            <field name="VAR">listener</field>
+                        </block>
+                    </value>
+                </block>
             </category>
         </category>
     </category>

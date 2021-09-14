@@ -18,9 +18,17 @@ function log(msg) {
  * @param {org.bukkit.event.EventPriority} priority 事件监听优先级
  * @param {Boolean} ignoreCancelled 是否监听被取消的事件
  * @param {*} callback 事件触发的回调
+ * @returns 事件监听对象，用于注销
  * 
  */
 function registerEventListener(eventType, priority, ignoreCancelled, callback) {
+}
+
+/**
+ * 注销事件监听
+ * @param {*} listener 
+ */
+function unregisterEventListener(listener) {
 }
 
 /**
